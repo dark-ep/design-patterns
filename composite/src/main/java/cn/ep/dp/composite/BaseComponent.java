@@ -1,0 +1,83 @@
+package cn.ep.dp.composite;
+
+import java.util.List;
+
+/**
+ * 抽象的组件对象
+ *
+ * @author lhl
+ */
+public abstract class BaseComponent {
+
+    /**
+     * 记录父组件对象
+     */
+    private BaseComponent parent;
+
+    /**
+     * 获取一个组件的父组件对象
+     *
+     * @return 一个组件的父组件对象
+     */
+    public BaseComponent getParent() {
+        return parent;
+    }
+
+    /**
+     * 设置一个组件的父组件对象
+     *
+     * @param parent 一个组件的父组件对象
+     */
+    public void setParent(BaseComponent parent) {
+        this.parent = parent;
+    }
+
+    /**
+     * 返回某个组件的子组件对象
+     *
+     * @return 某个组件的子组件对象
+     */
+    public List<BaseComponent> getChildren() {
+        throw new UnsupportedOperationException("对象不支持这个功能");
+    }
+    /*-------------------以下是原有的定义----------------------*/
+
+    /**
+     * 输出组件自身的名称
+     *
+     * @param preStr 待输出的内容
+     */
+    public abstract void printStruct(String preStr);
+
+    /**
+     * 向组合对象中加入组件对象
+     *
+     * @param child 被加入组合对象中的组件对象
+     */
+    public void addChild(BaseComponent child) {
+        // 缺省的实现，抛出例外，因为叶子对象没有这个功能，或者子组件没有实现这个功能
+        throw new UnsupportedOperationException("对象不支持这个功能");
+    }
+
+    /**
+     * 从组合对象中移出某个组件对象
+     *
+     * @param child 被移出的组件对象
+     */
+    public void removeChild(BaseComponent child) {
+        // 缺省的实现，抛出例外，因为叶子对象没有这个功能，或者子组件没有实现这个功能
+        throw new UnsupportedOperationException("对象不支持这个功能");
+    }
+
+    /**
+     * 返回某个索引对应的组件对象
+     *
+     * @param index 需要获取的组件对象的索引，索引从0开始
+     * @return 索引对应的组件对象
+     */
+    public BaseComponent getChildren(int index) {
+        throw new UnsupportedOperationException("对象不支持这个功能");
+    }
+
+}
+
